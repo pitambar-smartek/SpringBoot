@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="employeeBeanOne" class="com.pita.spring.EmployeeDetailBean">
+		<property name="stateName" value="Odisha"></property>
+		<property name="pinCode" value="761117"></property>
+		<property name="districtName" value="Ganjam"></property>
+		<property name="homwTownName" value="Berhampur"></property>
+		<property name="houseNo" value="HOMNO1234"></property>
+	</bean>
+
+	<bean id="employeeBeanTwo" class="com.pita.spring.EmployeeDetailBean">
+		<property name="stateName" value="Maharastra"></property>
+		<property name="pinCode" value="411027"></property>
+		<property name="districtName" value="Nasik"></property>
+		<property name="homwTownName" value="Pune"></property>
+		<property name="houseNo" value="HOMNO457"></property>
+	</bean>
+	
+	<bean id="employeeBeanThree" class="com.pita.spring.EmployeeDetailBean">
+		<property name="stateName" value="Utarakhand"></property>
+		<property name="pinCode" value="857241"></property>
+		<property name="districtName" value="purnina"></property>
+		<property name="homwTownName" value="DDDDD"></property>
+		<property name="houseNo" value="HOMNO784"></property>
+	</bean>
+
+	<bean id="employeeNameBeanOne" class="com.pita.spring.EmployeeNameBean">
+		<property name="empName" value="Pitambar"></property>
+	</bean>
+	
+	<bean id="employeeNameBeanTwo" class="com.pita.spring.EmployeeNameBean">
+		<property name="empName" value="Kunal Banjara"></property>
+	</bean>
+	
+	<bean id="employeeNameBeanThree" class="com.pita.spring.EmployeeNameBean">
+		<property name="empName" value="Prabhat Dewadi"></property>
+	</bean>
+
+	<bean id="mapBean" class="com.pita.spring.DifferentStateEmployeeBean">
+		<property name="map" ref="mapFactoryBean" />		
+	</bean>
+	
+	<bean id="mapBeanOne" class="com.pita.spring.DifferentStateEmployeeBean">
+		<property name="map" ref="mapFactoryBean" />
+	</bean>
+	
+	<bean name="mapFactoryBean" class="org.springframework.beans.factory.config.MapFactoryBean">
+	  <property name="sourceMap">
+	     
+			<map>
+
+				<entry key-ref="employeeNameBeanOne" value-ref="employeeBeanOne"></entry>
+				<entry key-ref="employeeNameBeanTwo" value-ref="employeeBeanTwo"></entry>
+				<entry key-ref="employeeNameBeanThree" value-ref="employeeBeanThree"></entry>
+			</map>
+	  </property>
+	</bean>
+
+
+
+</beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" default-init-method="init" default-destroy-method="destroy">
+
+	<bean id="bookBean" class="com.nareshit.spring.BookBean" >
+	<property name="title" value="MY Spring Book"></property>
+	<property name="version" value="2.x"></property>
+	<property name="price" value="8500"></property>
+	<property name="isbn" value="14BAB478CD"></property>
+	</bean>
+	
+	<bean id="bookBeanOne" class="com.nareshit.spring.BookBean" parent="bookBean">
+	<property name="title" value="Good Spring Book"></property>
+	
+	
+	<property name="isbn" value="410BAB778CD"></property>
+	</bean>
+	
+
+</beans>

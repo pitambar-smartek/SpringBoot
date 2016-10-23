@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" default-init-method="init" default-destroy-method="destroy">
+
+	<bean id="dao" class="com.pitambar.dao.AccountDAOImpl" />
+	<bean id="serviceBean" class="com.pitambar.service.AccountServiceImpl" >
+	   <property name="accountDAO" ref="dao"></property>
+	   </bean>
+	   <bean id="contollerBean" class="com.pitambar.controller.AccountController">
+	     <property name="accountService" ref="serviceBean"></property>
+	   </bean>
+		
+
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" default-init-method="init" default-destroy-method="destroy">
+<import resource="students.xml"/>
+
+	<bean id="collegeBean" class="com.nareshit.spring.CollegeBean" >
+	<property name="name" value="BICM"></property>
+	<property name="students">
+	<set>
+	<ref bean="studentBeanOne"/>
+	<ref bean="studentBeanTwo"/>
+	<ref bean="studentBeanThree" />
+	<ref bean="studentBeanFour" />
+	<ref bean="studentBeanFive"/>
+	</set>
+	</property>
+	
+	
+	
+	</bean>
+	
+	
+
+</beans>

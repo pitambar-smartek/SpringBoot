@@ -1,0 +1,21 @@
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+ <form-beans>
+  <form-bean name="accountform" type="com.nareshit.view.AccountForm" >
+     
+  </form-bean>
+ </form-beans>
+ <action-mappings>
+  <action type="com.nareshit.controller.InterestAction" name="accountform" path="/interest">
+  <forward name="success" path="/interestdetails.jsp" />
+  <forward name="noaccount" path="/noaccount.jsp" />
+  <forward name="problem" path="/problem.jsp" />
+  </action>
+ </action-mappings>
+ <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+   <set-property property="contextConfigLocation" value="/WEB-INF/classes/applicationContext.xml"></set-property>
+ </plug-in>
+
+</struts-config>

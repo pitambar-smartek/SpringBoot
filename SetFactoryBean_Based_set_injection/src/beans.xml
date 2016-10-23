@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="employeeBeanOne" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Pitambar Mohanty" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="New Sangvi" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="607361863" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanTwo" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Kunal Banjara" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="banner" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="607361845" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanThree" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="samaya mohanty" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Ballewadi" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="60736184578" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanFour" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Swati Mhatree" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Koregaon park" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="45789654" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanFive" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Swati Mhatree" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Koregaon park" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="45789654" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanSix" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Ankita Shrivastav" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Banner+Balewadi" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="45789654" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="compantyBean" class="com.pita.spring.CompanyBean">
+		<property name="compantyName" value="Symphony Teleca PVT. LTD."></property>
+		<property name="employeeList" ref="setFactoryBean" />
+
+
+	</bean>
+	
+	<bean id="compantyBeanOne" class="com.pita.spring.CompanyBean">
+		<property name="compantyName" value="ShikshaInfotech PVT. LTD."></property>
+		<property name="employeeList" ref="setFactoryBean" />
+
+
+	</bean>
+
+	<bean id="setFactoryBean" class="org.springframework.beans.factory.config.SetFactoryBean">
+		<property name="sourceSet">
+			<set>
+				<ref bean="employeeBeanOne" />
+				<ref bean="employeeBeanTwo" />
+				<ref local="employeeBeanThree" />
+				<ref local="employeeBeanFour" />
+				<ref local="employeeBeanFive"></ref>
+				<ref bean="employeeBeanSix"/>
+
+			</set>
+		</property>
+
+
+	</bean>
+
+
+
+</beans>

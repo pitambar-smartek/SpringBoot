@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="employeeBean" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Animesh Kewliya" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="GokulDham Society" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="51423698" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanOne" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Pitambar Mohanty" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="New Sangvi" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="607361863" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanTwo" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Kunal Banjara" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="banner" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="607361845" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanThree" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="samaya mohanty" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Ballewadi" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="60736184578" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanFour" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Swati Mhatree" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Koregaon park" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="45789654" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	
+	<bean id="employeeBeanFive" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Prabhat Dewadi" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Khadki" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="7541245" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	<bean id="employeeBeanSix" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="Ankita Shrivastav" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Banner,near Galabi" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="7854632" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	
+	<bean id="employeeBeanSeven" class="com.pita.spring.EmployeeBean">
+		<constructor-arg value="ketan Dada" index="0"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="Aundh" index="2"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg value="123456789" index="1"
+			type="java.lang.String"></constructor-arg>
+
+	</bean>
+	
+	<bean name="compantyBean" class="com.pita.spring.CompanyBean">
+		<property name="compantyName" value="Shiksha Infotech Pvt. Ltd."></property>
+		<property name="employeeList" ref="listFactoryBean" />
+
+	</bean>
+	
+	<bean name="compantyBeanOne" class="com.pita.spring.CompanyBean">
+		<property name="compantyName" value="Symphony Teleca PVT. LTD."></property>
+		<property name="employeeList" ref="listFactoryBean" />
+
+	</bean>
+	
+	<bean name="compantyBeanTwo" class="com.pita.spring.CompanyBean">
+		<property name="compantyName" value="British Telecom Pvt. Ltd."></property>
+		<property name="employeeList" ref="listFactoryBean" />
+
+	</bean>
+	
+	<bean id="listFactoryBean"
+		class="org.springframework.beans.factory.config.ListFactoryBean">
+		<property name="sourceList">
+			<list>
+			    <ref bean="employeeBean"/>
+				<ref bean="employeeBeanOne" />
+				<ref bean="employeeBeanTwo" />
+				<ref bean="employeeBeanThree" />
+				<ref bean="employeeBeanFour" />
+				<ref bean="employeeBeanFive" />
+				<ref bean="employeeBeanSix"/>
+				<ref bean="employeeBeanSeven"/>
+
+			</list>
+		</property>
+
+	</bean>
+
+</beans>
